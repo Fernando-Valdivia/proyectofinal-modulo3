@@ -56,9 +56,10 @@ p{
     padding: 0;
     overflow: hidden;
     position: relative;
-    height: 60vh;
+    height: 80vh;
     width: 100%;
     margin: 0px 0px;
+    cursor: pointer;
 }
 
 .carousel-inner {
