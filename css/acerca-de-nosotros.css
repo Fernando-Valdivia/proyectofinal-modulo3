@@ -4,3 +4,38 @@ h2{
     color: #0082b0!important;
 }
 
+/* Atencion y botones */
+
+.turnos--Content{
+    background-color: #222C66;
+}
+
+.cv--Content{
+    background-color: #0082b0 ;
+}
+
+.btn-cv{
+    background-color: #222C66!important;
+    font-weight: bold;
+}
+
+.cv--title{
+    color: #222C66!important;
+    font-weight: bold;
+}
+
+/* contactos */
+
+.contactos{
+    background-color: #4d4d51;
+}
+
+/* Registro Personal */
+
+.img-registro{
+    width: 200px;
+}
+
+ul > li {
+    font-size: 12px;
+}
