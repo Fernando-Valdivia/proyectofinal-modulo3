@@ -23,11 +23,64 @@
     <header id="header" class="container-fluid col-12">
         <span class="span--content">Av Rivadavia 1888 - Buenos Aires -  Tel (11-31299302)</span>
         <div>
-            <button class="btn btn-primary" id="loginPacientes">Acceso Pacientes</button>
-            <button class="btn btn-secondary" id="loginMedicos">Acceso Medicos</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPacientes" id="loginPacientes">Acceso Pacientes</button>
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalMedicos" id="loginMedicos">Acceso Medicos</button>
         </div>
     </header>
-
+    <!-- //Creo la primer ventana modal para el login de pacientes -->
+    <div class="modal" id="modalPacientes" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login Pacientes</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Correo electronico:</label>
+                      <input type="email" class="form-control" id="email" >
+            
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                    
+                    <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cerrar"> 
+                    <input type="submit" class="btn btn-primary" value="Login">
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+ <!-- // Esta es la segunda ventana modal para el login de medicos-->
+      <div class="modal" id="modalMedicos" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login Medicos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Correo electronico:</label>
+                      <input type="email" class="form-control" id="email" >
+            
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                    
+                    <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cerrar"> 
+                    <input type="submit" class="btn btn-primary" value="Login">
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <!-- Logo en la esquina izquierda -->
