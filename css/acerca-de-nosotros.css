@@ -39,3 +39,15 @@ h2{
 ul > li {
     font-size: 12px;
 }
+
+footer {
+    background-color: #343a40; /* Color de fondo oscuro */
+    color: white; /* Color de texto blanco */
+    padding: 20px 0; /* Padding vertical */
+}
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
