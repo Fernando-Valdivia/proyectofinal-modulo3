@@ -4,56 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca de Nosotros</title>
-    <link rel="stylesheet" href="/css/acerca-de-nosotros.css">
+    <link rel="stylesheet" href="../css/acerca-de-nosotros.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/mediaQueries.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
-    <header class="bg-white text-white text-center py-4">
-        <h1>Acerca de Nosotros</h1>
-    </header>
-
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-6">
-                <section class="mb-5">
-                    <h2>Nuestra Historia</h2>
-                    <p>Somos una empresa dedicada a al desarrollo web para la salud.</p>
-                </section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid d-flex justify-content-between">
+            <!-- Logo y título -->
+            <a class="navbar-brand d-flex align-items-center" href="/index.html">
+                <img class="img-rounded me-2" src="../assets/img/navbar/logo.png.png" alt="logo" style="height: 40px;">
+                <span class="title--Web col-sm-12 fw-bold">Obra Social Prepaga</span>
+            </a>
+    
+            <!-- Botón de colapsar para dispositivos pequeños -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Contenido de la barra de navegación -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./pages/acerca-de-nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trabaja con nosotros</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-6">
-                <section class="mb-4">
-                    <h2>Nuestro Equipo</h2>
-                    <p>Nuestro equipo está formado por 5 profesionales...</p>
-                    <div class="row justify-content-center align-items-center">
-                        <div class="col-auto text-center">
-                            <img src="/assets/img/acerca-de-nosotros/fabrizio.jpg" alt="Avatar" class="img-fluid w-25 rounded-circle">
-                        <p class="mb-0">Fabrizio Coronel</p>
+        </div>
+    </nav>
+
+    
+
+
+    
+    <div class="container mt-5">
+        <!-- Row for "Nuestra Historia" -->
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-8">
+                <div class="p-4 border rounded-3 shadow-sm bg-light">
+                    <h2 class="text-center mb-4">Nuestra Historia</h2>
+                    <p class="text-center text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam facere quo earum quam, beatae culpa error quos id rerum laudantium blanditiis cum cumque. Sit sapiente quidem odio? Asperiores nulla minima nisi id neque! Possimus recusandae esse earum et dolore molestias ipsa natus fugit, a quia delectus veniam officia molestiae voluptatibus animi ut facere reprehenderit sapiente. Libero eius nam necessitatibus aperiam. Quasi veritatis, perspiciatis quia debitis temporibus sunt omnis accusamus eligendi?</p>
                 </div>
-                    <div class="col-auto text-center">
-                        <img src="/assets/img/acerca-de-nosotros/fernando.jpeg" alt="Avatar" class="img-fluid w-25 rounded-circle">
-                        <p class="mb-0">Fernando Valdivia</p>
-                    </div>
-                    <div class="col-auto text-center">
-                        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="img-fluid avatar w-25 rounded-circle">
-                        <p class="mb-0">Juan Ignacio Capra</p>
-                    </div>
-                    <div class="col-auto text-center">
-                        <img src="/assets/img/acerca-de-nosotros/hernan.png" alt="Avatar" class="img-fluid w-25 rounded-circle">
-                        <p class="mb-0">Hernan Diaz</p>
-                    </div>
-                <div class="col-auto text-center">
-                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar w-25 rounded-circle">
-                        <p class="mb-0">Matias Diaz</p>
+            </div>
+        </div>
+        
+        <!-- Row for "Nuestro Equipo" -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Nuestro Equipo</h2>
+                <p>Nuestro equipo está formado por 5 profesionales...</p>
+            </div>
+        </div>
+    
+        <!-- Row for team members with gap -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 text-center">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Fabrizio Coronel" class="card-img-top rounded-circle mx-auto mt-3" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Fabrizio Coronel</p>
                     </div>
                 </div>
-                </section>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Fernando Valdivia" class="card-img-top rounded-circle mx-auto mt-3" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Fernando Valdivia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Juan Ignacio Capra" class="card-img-top rounded-circle mx-auto mt-3" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Juan Ignacio Capra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Hernan Diaz" class="card-img-top rounded-circle mx-auto mt-3" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Hernan Diaz</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Matias Diaz" class="card-img-top rounded-circle mx-auto mt-3" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Matias Diaz</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    
+    
+
+
     <section>
         <div class="container-fluid mt-5">
             <div class="row turnos--Content text-white py-3">
@@ -74,6 +142,7 @@
                     <button class="btn btn-cv text-white">Envia tu Curriculum Vitae Aqui</button>
                 </div>
             </div>
+
             <div class="row py-4 contactos">
                 <div class="col-md-8 d-flex justify-content-center m-auto flex-wrap gap-4">
                     <div class="col-md-4 col-sm-6 col-12">
@@ -93,7 +162,7 @@
                         </ul>
                     </div>
                     <div class="col-md-2">
-                        <img src="/assets/img/acerca-de-nosotros/aaio.png" width="170px" alt="">
+                        <img src="../assets/img/acerca-de-nosotros/aaio.png" width="170px" alt="">
                     </div>
                 </div>
             </div>
@@ -117,6 +186,6 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
