@@ -73,16 +73,17 @@ p{
     height: 80%;
 }
 
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: auto;
-    margin-top: -50px; 
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: black; 
+.welcome-text {
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: translateY(-50%); 
+    z-index: 1; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(6px); 
 }
 
 
@@ -105,6 +106,8 @@ p{
 .card-text{
     font-size: 10px;
 }
+
+
 
 /* Especialidades */
 
@@ -180,8 +183,6 @@ p{
 ul > li {
     font-size: 12px;
 }
-
-
 
 
 .fixed-button {
