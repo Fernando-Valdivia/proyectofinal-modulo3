@@ -46,6 +46,13 @@ function validarUsuario(e) {
 	const validarEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 	const resultadoValdacion = validarEmail.test(email);
 
+	//validar que la contraseña tenga al menos una mayuscula y un valor numerico
+	const validarContrasena = /^(?=.*[A-Z])(?=.*\d).+/;
+	const resultadoContrasena = validarContrasena.test(password);
+	
+	if(!resultadoContrasena){
+	return mostrarError("La contraseña debe contener al menos una mayúscula y un valor numérico")}
+
 	//validar que el email sea valido
 	if (!resultadoValdacion) {
 		return mostrarError('El email no es valido');
