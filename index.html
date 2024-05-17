@@ -36,15 +36,15 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="validarLoginPacientes">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Correo electronico:</label>
-                      <input type="email" class="form-control" id="email" >
+                      <input type="email" class="form-control" id="emailPacientes" >
             
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-                      <input type="password" class="form-control" id="password">
+                      <input type="password" class="form-control" id="passwordPacientes">
                     </div>
                     
                     <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cerrar"> 
@@ -63,15 +63,15 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="validarLoginMedicos">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Correo electronico:</label>
-                      <input type="email" class="form-control" id="email" >
+                      <input type="email" class="form-control" id="emailMedicos" >
             
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-                      <input type="password" class="form-control" id="password">
+                      <input type="password" class="form-control" id="passwordMedicos">
                     </div>
                     
                     <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cerrar"> 
@@ -296,6 +296,7 @@
         </div>
     </div>
 </footer>
-
+<script src="js/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
