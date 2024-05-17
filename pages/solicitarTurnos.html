@@ -68,85 +68,77 @@
       <label for="especialidad">Especialidad:</label>
       <input type="text" id="especialidad" name="especialidad" required>
 
-      <label for="fecha">Fecha:</label>
-      <input type="date" id="fecha" name="fecha" required>
-
       <label for="horario">Horario:</label>
-      <input type="time" id="horario" name="horario" required>
+      <input type="datetime-local" id="horario" name="horario" required>
 
       <label for="motivo">Motivo de la consulta:</label>
       <textarea id="motivo" name="motivo" required></textarea>
 
-      <button class="buttonturno" type="submit">Solicitar Turno</button>
+      <button type="submit">Solicitar Turno</button>
     </form>
   </main>
 
 
+  <section>
+      <div class="container-fluid mt-5">
+          <div class="row turnos--Content text-white py-3">
+              <div class="col-md-7 m-auto d-flex justify-content-between align-items-center">
+                  <div>
+                      <h6>Atención por WhatsApp</h6>
+                      <p class="text-white">Número: 11-31299302</p>
+                  </div>
+                  <button class="btn btn-primary">Solicitar turnos por WhatsApp</button>
+              </div>
+          </div>
+          <div class="row cv--Content text-white py-3">
+              <div class="col-md-7 m-auto d-flex justify-content-between align-items-center">
+                  <div>
+                      <h6 class="cv--title">Trabaja en nuestra clinica</h6>
+                      <p class="text-white">Trabaja con Nosotros, envia tu CV</p>
+                  </div>
+                  <button class="btn btn-cv text-white">Envia tu Curriculum Vitae Aqui</button>
+              </div>
+          </div>
+          <div class="row py-4 contactos">
+              <div class="col-md-8 d-flex justify-content-center m-auto flex-wrap gap-4">
+                  <div class="col-md-4 col-sm-6 col-12">
+                      <h6 class="fw-bold text-white">Telefono:</h6>
+                      <p class="text-white">(0223)499-2656</p>
+                      <div>
+                          <h6 class="fw-bold text-white">Emergencia-Guardia</h6>
+                          <p class="text-white">Av Rivadavia 2999</p>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <h6 class="fw-bold text-white">Direccion:</h6>
+                      <ul class="list-unstyled text-white">
+                          <li>Av.Cordoba 2288</li>
+                          <li>Av.Rosario 281</li>
+                          <li>Bulnes 2288</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-2">
+                      <img src="./assets/img/registropersonal/aaio.png" width="170px" alt="">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
+  <footer>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12 bg-dark">
+                  <div class="col-md-12 text-center py-3"> <!-- Agregar padding vertical (py-3) para espacio -->
+                      <div class="d-flex justify-content-center align-items-center h-100"> <!-- Alinear verticalmente y centrar -->
+                          <p class="text-white mb-0">@2024 - Room 2 Proyecto JavaScript Rolling Code School (comisión 93i)</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
 
-
-    <section>
-        <div class="container-fluid mt-5">
-            <div class="row turnos--Content text-white py-3">
-                <div class="col-md-7 m-auto d-flex justify-content-between align-items-center">
-                    <div>
-                        <h6>Atención por WhatsApp</h6>
-                        <p class="text-white">Número: 11-31299302</p>
-                    </div>
-                    <button class="btn btn-primary">Solicitar turnos por WhatsApp</button>
-                </div>
-            </div>
-            <div class="row cv--Content text-white py-3">
-                <div class="col-md-7 m-auto d-flex justify-content-between align-items-center">
-                    <div>
-                        <h6 class="cv--title">Trabaja en nuestra clinica</h6>
-                        <p class="text-white">Trabaja con Nosotros, envia tu CV</p>
-                    </div>
-                    <button class="btn btn-cv text-white">Envia tu Curriculum Vitae Aqui</button>
-                </div>
-            </div>
-            <div class="row py-4 contactos">
-                <div class="col-md-8 d-flex justify-content-center m-auto flex-wrap gap-4">
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <h6 class="fw-bold text-white">Telefono:</h6>
-                        <p class="text-white">(0223)499-2656</p>
-                        <div>
-                            <h6 class="fw-bold text-white">Emergencia-Guardia</h6>
-                            <p class="text-white">Av Rivadavia 2999</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h6 class="fw-bold text-white">Direccion:</h6>
-                        <ul class="list-unstyled text-white">
-                            <li>Av.Cordoba 2288</li>
-                            <li>Av.Rosario 281</li>
-                            <li>Bulnes 2288</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="./assets/img/registropersonal/aaio.png" width="170px" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 bg-dark">
-                    <div class="col-md-12 text-center py-3"> <!-- Agregar padding vertical (py-3) para espacio -->
-                        <div class="d-flex justify-content-center align-items-center h-100"> <!-- Alinear verticalmente y centrar -->
-                            <p class="text-white mb-0">@2024 - Room 2 Proyecto JavaScript Rolling Code School (comisión 93i)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-  <script src="script.js"></script>
+<script src="/JS/turnos.js"></script>
 </body>
 </html>
