@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
     function validarDescripcion(input) {
-      const regex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s:]*$/;
+      const regex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s:.-]*$/;
       return regex.test(input);
     }
   
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
       inputElement.addEventListener('input', function (event) {
         const valor = event.target.value;
         if (!validarDescripcion(valor)) {
-          event.target.value = valor.replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s:]/g, '');
+          event.target.value = valor.replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s:.-]/g, '');
         }
       });
     }
