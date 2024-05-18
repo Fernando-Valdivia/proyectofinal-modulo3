@@ -31,6 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function validarDescripcion(input) {
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/;
+    return regex.test(input);
+  }
+
+  function restringirInput(inputElement) {
+    inputElement.addEventListener('input', function (event) {
+      const valor = event.target.value;
+      if (!validarDescripcion(valor)) {
+        event.target.value = valor.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
+      }
+    });
+  }
+
   especialidadesBody.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-eliminar')) {
       const index = event.target.dataset.index;
@@ -49,24 +63,36 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
     const codigo = editCodigoInput.value;
     const descripcion = editDescripcionInput.value;
-    const especialidad = especialidades.find(e => e.codigo == codigo);
-    especialidad.descripcion = descripcion;
-    guardarEspecialidadesEnLocalStorage();
-    editModal.hide();
-    renderEspecialidades();
+    if (validarDescripcion(descripcion)) {
+      const especialidad = especialidades.find(e => e.codigo == codigo);
+      especialidad.descripcion = descripcion;
+      guardarEspecialidadesEnLocalStorage();
+      editModal.hide();
+      renderEspecialidades();
+    } else {
+      alert('Por favor, ingrese una descripción válida con solo letras y acentos.');
+    }
   });
 
   btnAgregarEspecialidad.addEventListener('click', function () {
     const descripcion = addDescripcionInput.value;
-    if (descripcion.trim() !== '') {
-      const codigo = especialidades.length ? Math.max(...especialidades.map(e => e.codigo)) + 1 : 1;
-      especialidades.push({ codigo, descripcion });
-      guardarEspecialidadesEnLocalStorage();
-      addModal.hide();
-      renderEspecialidades();
-      addDescripcionInput.value = ''; // Limpiar el campo de entrada
+    if (validarDescripcion(descripcion)) {
+      if (descripcion.trim() !== '') {
+        const codigo = especialidades.length ? Math.max(...especialidades.map(e => e.codigo)) + 1 : 1;
+        especialidades.push({ codigo, descripcion });
+        guardarEspecialidadesEnLocalStorage();
+        addModal.hide();
+        renderEspecialidades();
+        addDescripcionInput.value = ''; // Limpiar el campo de entrada
+      }
+    } else {
+      alert('Por favor, ingrese una descripción válida con solo letras y acentos.');
     }
   });
+
+  // Aplicar restricción de input en tiempo real
+  restringirInput(addDescripcionInput);
+  restringirInput(editDescripcionInput);
 
   // Renderizar las especialidades al cargar la página
   renderEspecialidades();
