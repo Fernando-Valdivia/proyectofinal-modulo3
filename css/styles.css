@@ -96,6 +96,7 @@ p{
     background-size: cover; 
     width: 100%; 
     padding: 16px;
+    cursor: pointer;
 }
 
 .novedades-content{
@@ -117,6 +118,7 @@ p{
 
 .img-especialidades{
     width: 100px;
+    cursor: pointer;
 }
 
 .tarjeta {
