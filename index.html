@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="/css/pagina-principal.css">
+   <link rel="stylesheet" href="/css/mediaQueries.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <title>Proyecto Web Clinica</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>Obra Social Prepaga de Desarrolladores Argentinos</title>
 </head>
 <body>
 
-    <!-- //Creo Primer Header con un span donde detalla la direccion y telefono
-    //Luego, Creo un div donde hay 2 botones principales que son la llamada a la accion al acceso de medicos y de pacientes -->
 
-    <header id="header" class="container-fluid col-12">
-        <span class="span--content">Av Rivadavia 1888 - Buenos Aires -  Tel (11-31299302)</span>
-        <div>
-            <button class="btn btn-primary" id="loginPacientes">Acceso Pacientes</button>
-            <button class="btn btn-secondary" id="loginMedicos">Acceso Medicos</button>
+    <header id="header" class="container-fluid d-flex flex-column flex-lg-row justify-content-lg-between align-items-center py-2">
+        <span class="span--content">Av Rivadavia 1888 - Buenos Aires - Tel (11-31299302)</span>
+        <div class="d-flex flex-wrap justify-content-center justify-content-lg-end mt-2 mt-lg-0">
+            <button class="btn btn-danger me-1 my-1" id="loginAdmin">Admin</button>
+            <button class="btn btn-primary me-1 my-1" id="loginPacientes">Acceso Pacientes</button>
+            <button class="btn btn-secondary me-1 my-1" id="loginMedicos">Acceso Medicos</button>
         </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-            <!-- Logo en la esquina izquierda -->
-            <a class="navbar-brand" href="#">
-                <img src="./assets/img/navbar/icon-navbar.png" alt="">
-                <span class="p-3 title--Web">Proyecto Clinica</span>
+        <div class="container-fluid d-flex justify-content-between">
+            <!-- Logo y título -->
+            <a class="navbar-brand d-flex align-items-center" href="/index.html">
+                <img class="img-rounded me-2" src="./assets/img/navbar/logo.png.png" alt="logo" style="height: 40px;">
+                <span class="title--Web col-sm-12 fw-bold">Obra Social Prepaga</span>
             </a>
     
             <!-- Botón de colapsar para dispositivos pequeños -->
@@ -46,10 +44,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
+                        <a class="nav-link" href="/pages/acerca-de-nosotros.html">Nosotros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
@@ -63,28 +61,42 @@
     </nav>
 
     <section class="carousel-container">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./assets/img/carousel/carousel-1.jpg" class="d-block w-100" alt="Slide 1">
-            </div>
-            <div class="carousel-item">
-                <img src="./assets/img/carousel/carousel-1.jpg" class="d-block w-100" alt="Slide 2">
-            </div>
-            <div class="carousel-item">
-                <img src="./assets/img/carousel/carousel-1.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="welcome-text">
+            <h2 class="display-4">¡Bienvenido a OSDDA!</h2>
+        </div>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/img/carousel/carusel-3.jpg" class="img-fluid d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/carousel/carusel-4.jpg" class="img-fluid d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/carousel/carusel-5.jpg" class="img-fluid d-block w-100" alt="Slide 3">
+                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    </section>
+
+
+<section class="registration-section bg-light py-5 mt-5">
+    <div class="container">
+        <div class="row justify-content-center align-items-center text-center">
+            <div class="col-md-4">
+                <h4>Sistema de Registros</h4>
+                <p>¡Unite a nosotros!</p>
+            </div>
+            <!-- Botones de registro -->
+            <div class="col-md-2 d-flex justify-content-center flex-column">
+                <button id="registroPac" class="btn btn-primary mb-3">Registrarse como Paciente</button> 
+                <button id="registroMed" class="btn btn-secondary ">Registrarse como Médico</button>
+            </div>
+        </div>
     </div>
 </section>
+
+
 
 <div class="container mt-5 novedades">
     <div class="novedades-content">
@@ -94,10 +106,10 @@
         <!-- Primera tarjeta -->
         <div class="col-md-4 col-sm-6 col-12 mb-3">
             <div class="card border-0 ">
-                <img src="./assets/img/card/card-1.jpg" class="card-img-top" alt="...">
+                <img src="/assets/img/card/endoscopia.png" class="card-img-top" alt="endoscopia">
                 <div class="card-body">
-                    <h6 class="card-title">Importancia de la videocolonoscopia para la deteccion precoz del cancer</h6>
-                    <p class="card-text">El Dr. Mario Lozzi, integrante del area de endoscopia y del servicio de Gastroenterologia de..</p>
+                    <h6 class="card-title">XXVII Workshop Nacional de Endoscopia</h6>
+                    <p class="card-text">El 1 de Junio se realizará el XXVII Workshop Nacional de Endoscopia organizado en conjunto...</p>
                 </div>
             </div>
         </div>
@@ -105,7 +117,7 @@
         <!-- Segunda tarjeta -->
         <div class="col-md-4 col-sm-6 col-12 mb-3">
             <div class="card border-0">
-                <img src="./assets/img/card/card-2.jpg" class="card-img-top" alt="...">
+                <img src="/assets/img/card/card-2.jpg" class="card-img-top" alt="videocolonoscopia">
                 <div class="card-body">
                     <h6 class="card-title">Importancia de la videocolonoscopia para la deteccion precoz del cancer</h6>
                     <p class="card-text">El Dr. Mario Lozzi, integrante del area de endoscopia y del servicio de Gastroenterologia de..</p>
@@ -116,10 +128,10 @@
         <!-- Tercera tarjeta -->
         <div class="col-md-4 col-sm-6 col-12 ">
             <div class="card border-0">
-                <img src="./assets/img/card/card-1.jpg" class="card-img-top" alt="...">
+                <img src="/assets/img/card/diabetes.jpg" class="card-img-top" alt="diabetes">
                 <div class="card-body">
-                    <h6 class="card-title">Importancia de la videocolonoscopia para la deteccion precoz del cancer</h6>
-                    <p class="card-text">El Dr. Mario Lozzi, integrante del area de endoscopia y del servicio de Gastroenterologia de..</p>
+                    <h6 class="card-title">¿Ques es la diabetes gestacional?</h6>
+                    <p class="card-text">El Dr. Luciano Pérez, integrante del Servicio de Endocrinología, explica qué es la diabetes gestacional,…</p>
                 </div>
             </div>
         </div>
@@ -134,50 +146,50 @@
         <hr>
         <div class="row justify-content-center">
             <!-- Primera tarjetita -->
-            <div class="col-md-2 col-sm-6 col-6 mb-3 text-center">
+            <div class="col-md-4 col-sm-6 col-6 mb-3 text-center">
                 <div class="tarjeta">
                     <img class="img-especialidades" src="./assets/img/especialidades/cirugia-plastica.png" alt="">
-                    <p class="text-center p">Cirugia Plastica</p>
+                    <p class="text-center">Cirugia Plastica</p>
                 </div>
             </div>
 
             <!-- Segunda tarjetita -->
-            <div class="col-md-2 col-sm-6 col-6 mb-3 text-center">
+            <div class="col-md-4 col-sm-6 col-6 mb-3 text-center">
                 <div class="tarjeta">
                     <img class="img-especialidades" src="./assets/img/especialidades/gastro.png" alt="">
-                    <p class="text-center p">Gastroenterologia</p>
+                    <p class="text-center">Gastroenterologia</p>
                 </div>
             </div>
 
             <!-- Tercera tarjetita -->
-            <div class="col-md-2 col-sm-6 col-6 mb-3 text-center">
+            <div class="col-md-4 col-sm-6 col-6 mb-3 text-center">
                 <div class="tarjeta">
                     <img class="img-especialidades" src="./assets/img/especialidades/ortopedia.png" alt="">
-                    <p class="text-center p">Ortopedia</p>
+                    <p class="text-center">Ortopedia</p>
                 </div>
             </div>
 
             <!-- Cuarta Tarjetita -->
-            <div class="col-md-2 col-sm-6 col-6 mb-3 text-center">
+            <div class="col-md-4 col-sm-6 col-6 mb-3 text-center">
                 <div class="tarjeta">
                     <img class="img-especialidades" src="./assets/img/especialidades/salud-mental.png" alt="">
-                    <p class="text-center p">Salud Mental</p>
+                    <p class="text-center">Salud Mental</p>
                 </div>
             </div>
 
             <!-- Quinta tarjetita -->
-            <div class="col-md-2 col-sm-6 col-6 mb-3 text-center">
+            <div class="col-md-4 col-sm-6 col-6 mb-3 text-center">
                 <div class="tarjeta">
                     <img class="img-especialidades" src="./assets/img/especialidades/cardiologia-infantil.png" alt="">
-                    <p class="text-center p">Cardiologia</p>
+                    <p class="text-center">Cardiologia</p>
                 </div>
             </div>
 
-            <!-- sexta tarjetita -->
-            <div class="col-md-2 col-sm-6 col-6 mb-3 text-center">
+            <!-- Sexta tarjetita -->
+            <div class="col-md-4 col-sm-6 col-6 mb-3 text-center">
                 <div class="tarjeta">
                     <img class="img-especialidades" src="./assets/img/especialidades/urologia.png" alt="">
-                    <p class="text-center p">Urologia</p>
+                    <p class="text-center">Urologia</p>
                 </div>
             </div>
         </div>
@@ -229,6 +241,12 @@
     </div>
 </div>
 </section>
+
+
+<a href="../proyectofinal-modulo3/pages/error404.html" class="btn btn-success fixed-button" role="button">
+    <i class="fab fa-whatsapp mr-2"></i> <!-- Ícono de WhatsApp -->
+</a>
+
 
 <footer>
     <div class="container-fluid">
