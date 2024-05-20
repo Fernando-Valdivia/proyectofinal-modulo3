@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function cargarMedicos(especialidadCodigo) {
     medicoSelect.innerHTML = '';
     registrados.forEach(medico => {
-      if (medico.codigo === especialidadCodigo) {
+      if (Number(medico.especialidad) === Number(especialidadCodigo)) {
         const option = document.createElement('option');
         option.value = medico.id;
         option.textContent = `${medico.nombre} ${medico.apellido}`;
@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   especialidadSelect.addEventListener('change', function () {
-    const especialidadSeleccionada = especialidadSelect.value;
+    const especialidadSeleccionada = Number(especialidadSelect.value);
     cargarMedicos(especialidadSeleccionada);
   });
 
   solicitarTurnoForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    const especialidadSeleccionada = especialidadSelect.value;
+    const especialidadSeleccionada = Number(especialidadSelect.value);
     const medicoSeleccionado = medicoSelect.value;
     const fechaSeleccionada = fechaInput.value;
     const turnoSeleccionado = turnoSelect.value;
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   cargarEspecialidades();
   cargarTurnos();
-
+/*
   // Configurar el datepicker
   $(document).ready(function(){
     $('#fecha').datepicker({
@@ -89,4 +89,5 @@ document.addEventListener('DOMContentLoaded', function () {
       todayHighlight: true
     }).datepicker('setDate', new Date());
   });
+*/  
 });
