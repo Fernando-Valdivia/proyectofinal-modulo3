@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   cargarEspecialidades();
   cargarTurnos();
-/*
+
   // Configurar el datepicker
   $(document).ready(function(){
     $('#fecha').datepicker({
@@ -89,5 +89,5 @@ document.addEventListener('DOMContentLoaded', function () {
       todayHighlight: true
     }).datepicker('setDate', new Date());
   });
-*/  
+  
 });
