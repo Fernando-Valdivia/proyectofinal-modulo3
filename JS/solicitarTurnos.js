@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
       option.textContent = especialidad.descripcion;
       especialidadSelect.appendChild(option);
     });
+    const especialidadSeleccionada = Number(especialidadSelect.value);
+    cargarMedicos(especialidadSeleccionada);
   }
 
   function cargarMedicos(especialidadCodigo) {
@@ -73,7 +75,15 @@ document.addEventListener('DOMContentLoaded', function () {
     solicitudesTurnos.push(solicitudTurno);
     localStorage.setItem('solicitudesTurnos', JSON.stringify(solicitudesTurnos));
 
-    alert('Turno solicitado con éxito.');
+    /*alert('Turno solicitado con éxito.');*/
+    // Mostrar mensaje de éxito y redirigir
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Turno solicitado con éxito.',
+      showConfirmButton: false,
+      timer: 1500,
+    });
     solicitarTurnoForm.reset();
   });
 
@@ -83,11 +93,23 @@ document.addEventListener('DOMContentLoaded', function () {
   // Configurar el datepicker
   $(document).ready(function(){
     $('#fecha').datepicker({
-      format: 'yyyy-mm-dd',
+      format: 'dd-mm-yyyy',
       language: 'es',
       autoclose: true,
-      todayHighlight: true
+      todayHighlight: true,
+      beforeShowDay: function(date) {
+        var day = date.getDay();
+        return [(day !== 0 && day !== 6), ''];
+      }
     }).datepicker('setDate', new Date());
   });
-  
+
+  function mostrarError(mensaje) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: mensaje,
+    });
+  };
+
 });
