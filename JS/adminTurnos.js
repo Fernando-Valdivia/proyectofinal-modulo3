@@ -90,6 +90,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   
+    // Agregar evento keypress para el formulario de agregar turno
+    document.getElementById('add-descripcion').addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Evitar envío por defecto
+        document.getElementById('btn-agregar-turno').click(); // Simular clic en el botón de agregar turno
+      }
+    });
+
+    // Agregar evento keypress para el formulario de editar turno
+    document.getElementById('edit-descripcion').addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Evitar envío por defecto
+        document.getElementById('edit-turno-form').submit(); // Enviar formulario de edición
+      }
+    });
+
+
     // Aplicar restricción de input en tiempo real
     restringirInput(addDescripcionInput);
     restringirInput(editDescripcionInput);
