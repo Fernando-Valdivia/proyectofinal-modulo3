@@ -9,10 +9,6 @@ form {
   }
   
 /* Cambio de color de fondo del body */
-.body_turnos {
-    background-color: #c2e5f3; /* Celeste claro */
-  }
-  
   label,
   input,
   textarea {
