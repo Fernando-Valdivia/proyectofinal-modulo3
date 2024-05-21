@@ -2,7 +2,7 @@
 
 const validaLoginAdmin = document.querySelector("#validarLoginAdmin");
 validarLoginAdmin.addEventListener("submit", validarAdmin);
-
+const administradores = JSON.parse(localStorage.getItem("administradores"));
 
 function validarAdmin(e) {
   e.preventDefault();
@@ -13,13 +13,46 @@ function validarAdmin(e) {
 
   const validarEmailAdmin = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
   const resultadoValidacionAdmin = validarEmailAdmin.test(emailAdmin);
-  if (!resultadoValidacionAdmin)
+
+  const emailExistenteAdministrador = administradores.find(usuario => email === usuario.email);
+
+  if (emailExistenteAdministrador == undefined){
+    return Swal.fire({
+      icon: "error",
+      title: "El correo o la contraseña es incorrecta",
+      text: "Vuelva a intentarlo",
+    });
+  }
+  if (emailExistenteAdministrador.password !== password){
+    return Swal.fire({
+      icon: "error",
+      title: "El correo o la contraseña es incorrecta",
+      text: "Vuelva a intentarlo",
+    });
+  
+  }
+
+
+  const dominio = emailAdmin.split('@')[1];
+  
+  
+
+  if(dominio !== "osdda.com"){
+    return Swal.fire({
+      icon: "error",
+      title: "El correo o la contraseña es incorrecta",
+      text: "Vuelva a intentarlo",
+    });
+
+  }
+
+  if (!resultadoValidacionAdmin){
     return Swal.fire({
       icon: "error",
       title: "Ingrese un email valido!",
       text: "Vuelva a intentarlo",
     });
-
+  }
   if (emailAdmin === "" || passwordAdmin === "") {
     return Swal.fire({
       icon: "error",

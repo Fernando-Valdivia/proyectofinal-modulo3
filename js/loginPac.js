@@ -31,7 +31,6 @@ if (emailExistentePaciente.password !== password){
     text: "Vuelva a intentarlo",
   });
 
-
 }
 
   if (!resultadoValidacionPaciente)
