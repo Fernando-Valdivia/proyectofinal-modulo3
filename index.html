@@ -22,8 +22,8 @@
     <header id="header" class="container-fluid d-flex flex-column flex-lg-row justify-content-lg-between align-items-center py-2">
         <span class="span--content">Av Rivadavia 1888 - Buenos Aires - Tel (11-31299302)</span>
         <div class="d-flex flex-wrap justify-content-center justify-content-lg-end mt-2 mt-lg-0">
-            <button class="btn btn-danger me-1 my-1" id="loginAdmin">Admin</button>
-            <button class="btn btn-primary me-1 my-1" id="loginPacientes">Acceso Pacientes</button>
+            <a href="./pages/dashboard_admin.html"><button class="btn btn-danger me-1 my-1" id="loginAdmin">Admin</button></a>
+            <a href="./pages/"><button class="btn btn-primary me-1 my-1" id="validarRegistro">Acceso Pacientes</button></a>
             <button class="btn btn-secondary me-1 my-1" id="loginMedicos">Acceso Medicos</button>
         </div>
     </header>
@@ -52,7 +52,7 @@
                         <a class="nav-link" href="./pages/acerca-de-nosotros.html">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Trabaja con nosotros</a>
@@ -91,8 +91,8 @@
             </div>
             <!-- Botones de registro -->
             <div class="col-md-2 d-flex justify-content-center flex-column">
-                <button id="registroPac" class="btn btn-primary mb-3">Registrarse como Paciente</button> 
-                <button id="registroMed" class="btn btn-secondary ">Registrarse como Médico</button>
+                <a href="./pages/registropacientes.html"><button id="registroPac" class="btn btn-primary mb-3">Registrarse como Paciente</button></a>
+                <a href="./pages/registromedicos.html"><button id="registroMed" class="btn btn-secondary ">Registrarse como Médico</button></a>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
         <!-- Primera tarjeta -->
         <div class="col-md-4 col-sm-6 col-12 mb-3">
             <div class="card border-0 ">
-                <img src="./assets/img/card/card-1.jpg" class="card-img-top" alt="...">
+                <img src="/assets/img/acerca-de-nosotros/endoscopia.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h6 class="card-title">Importancia de la videocolonoscopia para la deteccion precoz del cancer</h6>
                     <p class="card-text">El Dr. Mario Lozzi, integrante del area de endoscopia y del servicio de Gastroenterologia de..</p>
