@@ -19,7 +19,7 @@ function renderizarTabla() {
     medicosBody.innerHTML = '';
 
     pacientes.forEach((paciente, index) => {
-        if (paciente.estado === 'Pendiente') {
+        if (paciente.estado === 'pendiente') {
             const fila = document.createElement('tr');
             fila.innerHTML = `
                 <td>${paciente.nombre}</td>
@@ -33,7 +33,7 @@ function renderizarTabla() {
     });
 
     medicos.forEach((medico, index) => {
-        if (medico.estado === 'Pendiente') {
+        if (medico.estado === 'pendiente') {
             const fila = document.createElement('tr');
             fila.innerHTML = `
                 <td>${medico.nombre}</td>
@@ -48,13 +48,13 @@ function renderizarTabla() {
 }
 
 window.autorizarPaciente = function (index) {
-    pacientes[index].estado = 'Autorizado';
+    pacientes[index].estado = 'autorizado';
     guardarPacientesEnLocalStorage();
     renderizarTabla();
 };
 
 window.autorizarMedico = function (index) {
-    medicos[index].estado = 'Autorizado';
+    medicos[index].estado = 'autorizado';
     guardarMedicosEnLocalStorage();
     renderizarTabla();
 };
