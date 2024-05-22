@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const especialidades = JSON.parse(localStorage.getItem('especialidades')) || [];
+    let especialidades = JSON.parse(localStorage.getItem('especialidades')) || [];
+
+    // Agregar las especialidades por defecto si no existen
+    if (especialidades.length === 0) {
+        especialidades.push({ codigo: 1, descripcion: 'Cardiólogo' });
+        especialidades.push({ codigo: 2, descripcion: 'Pediatra' });
+        localStorage.setItem('especialidades', JSON.stringify(especialidades));
+    }
+
     const especialidadSelect = document.getElementById('especialidad');
 
     especialidades.forEach(especialidad => {
@@ -8,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         option.textContent = especialidad.descripcion;
         especialidadSelect.appendChild(option);
     });
-/*});*/
+
     const validarRegistro = document.querySelector('#validarRegistro');
     validarRegistro.addEventListener('submit', validarUsuario);
 
@@ -33,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = Date.now();
         const nombre = document.querySelector('#nombre').value.trim();
         const apellido = document.querySelector('#apellido').value.trim();
-        /*const especialidad = document.querySelector('#especialidad').value.trim();*/
         const especialidad = document.querySelector('#especialidad').value;
         const email = document.querySelector('#email').value.trim();
         const password = document.querySelector('#password').value.trim();
@@ -56,12 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return mostrarError('El email no es válido');
         }
 
-        // Validar contraseña
-        // const validarContrasena = /^(?=.[A-Z])(?=.\d).+/;
-        // if (!validarContrasena.test(password)) {
-        //     return mostrarError('La contraseña debe contener al menos una mayúscula y un valor numérico');
-        // }
-
         // Verificar si el correo ya está registrado
         const comprobandoEmail = usuariosRegistrados.find(usuario => usuario.email === email);
         if (comprobandoEmail) {
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Crear el objeto Usuario con estado "pendiente"
         const nuevoUsuario = new Usuario(id, nombre, apellido, especialidad, email, password);
 
-        // Guardar en la lista y en el localStorage
+        // Guardar en el localStorage
         usuariosRegistrados.push(nuevoUsuario);
         localStorage.setItem('medicos', JSON.stringify(usuariosRegistrados));
 
