@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Obtener datos del local storage
   let especialidades = JSON.parse(localStorage.getItem('especialidades')) || [];
   let turnos = JSON.parse(localStorage.getItem('turnos')) || [];
-  let registrados = JSON.parse(localStorage.getItem('registrados')) || [];
+  let registrados = JSON.parse(localStorage.getItem('medicos')) || [];
 
   function cargarEspecialidades() {
     especialidadSelect.innerHTML = '';

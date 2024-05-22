@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const especialidades = JSON.parse(localStorage.getItem('especialidades')) || [];
+    const especialidadSelect = document.getElementById('especialidad');
+
+    especialidades.forEach(especialidad => {
+        const option = document.createElement('option');
+        option.value = especialidad.codigo;
+        option.textContent = especialidad.descripcion;
+        especialidadSelect.appendChild(option);
+    });
+/*});*/
     const validarRegistro = document.querySelector('#validarRegistro');
     validarRegistro.addEventListener('submit', validarUsuario);
 
@@ -23,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = Date.now();
         const nombre = document.querySelector('#nombre').value.trim();
         const apellido = document.querySelector('#apellido').value.trim();
-        const especialidad = document.querySelector('#especialidad').value.trim();
+        /*const especialidad = document.querySelector('#especialidad').value.trim();*/
+        const especialidad = document.querySelector('#especialidad').value;
         const email = document.querySelector('#email').value.trim();
         const password = document.querySelector('#password').value.trim();
         const confirmPassword = document.querySelector('#confirmPassword').value.trim();
