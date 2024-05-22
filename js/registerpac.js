@@ -1,3 +1,4 @@
+
 const validarRegistro = document.querySelector('#validarRegistro');
 
 validarRegistro.addEventListener('submit', validarUsuario);
