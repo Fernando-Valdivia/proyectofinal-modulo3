@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/styles.css">
-   <link rel="stylesheet" href="../css/mediaQueries.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/mediaQueries.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -23,9 +15,6 @@
     <title>Obra Social Prepaga de Desarrolladores Argentinos</title>
 </head>
 <body>
-
-    <!-- //Creo Primer Header con un span donde detalla la direccion y telefono
-    //Luego, Creo un div donde hay 2 botones principales que son la llamada a la accion al acceso de medicos y de pacientes -->
 
     <header id="header" class="container-fluid d-flex flex-column flex-lg-row justify-content-lg-between align-items-center py-2">
         <span class="span--content">Av Rivadavia 1888 - Buenos Aires - Tel (11-31299302)</span>
@@ -38,19 +27,16 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid d-flex justify-content-between">
-            <!-- Logo y título -->
             <a class="navbar-brand d-flex align-items-center" href="/index.html">
                 <img class="img-rounded me-2" src="../assets/img/navbar/logo.png.png" alt="logo" style="height: 40px;">
                 <span class="title--Web col-sm-12 fw-bold">Obra Social Prepaga</span>
             </a>
     
-            <!-- Botón de colapsar para dispositivos pequeños -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
-            <!-- Contenido de la barra de navegación -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -70,17 +56,29 @@
         </div>
     </nav>
 
-
-<!-- *** -->
-    <!-- BORRAR TODO ESTO Y REEMPLAZAR POR EL PANEL DE MEDICOS, NO USAR BR NI HR. (class mt-5..4..3 a todo) -->
-    <main class="text-center mt-5">
-        <h1 style="background-color: black;">Borrar Esto y reemplazar por el panel de Medicos (Bienvenido medicos..)</h1>
-        <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt facere aperiam tempore tempora ipsa quidem ullam quo, id sed eligendi natus deserunt, doloremque sequi aspernatur quam officiis odit sint facilis.</h2>
+    <main class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Turnos Asignados</h1>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Especialidad</th>
+                            <th scope="col">Médico</th>
+                            <th scope="col">Motivo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="turnos-list">
+                        <!-- Aquí se agregarán los turnos -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
-<!-- *** -->
-
-
-
 
     <section>
         <div class="container-fluid mt-5">
@@ -126,32 +124,31 @@
                 </div>
             </div>
         </div>
-        </section>
+    </section>
         
+    <a href="../proyectofinal-modulo3/pages/error404.html" class="btn btn-success fixed-button" role="button">
+        <i class="fab fa-whatsapp mr-2"></i>
+    </a>
         
-        <a href="../proyectofinal-modulo3/pages/error404.html" class="btn btn-success fixed-button" role="button">
-            <i class="fab fa-whatsapp mr-2"></i> <!-- Ícono de WhatsApp -->
-        </a>
-        
-        
-        <footer>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 bg-dark">
-                        <div class="col-md-12 text-center py-3"> <!-- Agregar padding vertical (py-3) para espacio -->
-                            <div class="d-flex justify-content-center align-items-center h-100"> <!-- Alinear verticalmente y centrar -->
-                                <p class="text-white mb-0">@2024 - Room 2 Proyecto JavaScript Rolling Code School (comisión 93i)</p>
-                            </div>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 bg-dark">
+                    <div class="col-md-12 text-center py-3">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <p class="text-white mb-0">@2024 - Room 2 Proyecto JavaScript Rolling Code School (comisión 93i)</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        
-        </body>
-        <script src="./js/administrator.js"></script>
-        <script src="./js/registerMed.js"></script>
-        <script src="./js/registerPac.js"></script>
-        </html>
+        </div>
+    </footer>
+    
+    <script src="./js/administrator.js"></script>
+    <script src="./js/registerMed.js"></script>
+    <script src="./js/registerPac.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 </html>

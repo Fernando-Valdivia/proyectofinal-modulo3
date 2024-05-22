@@ -36,13 +36,34 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  function cargarTurnos() {
-      // No es necesario modificar esta función si no se está utilizando el elemento "turnoSelect"
-  }
+  function mostrarTurnos() {
+      turnosList.innerHTML = ''; // Limpiar la lista de turnos antes de mostrar los nuevos
+      solicitudesTurnos.forEach(turno => {
+          const row = document.createElement('tr');
 
-  especialidadSelect.addEventListener('change', function () {
-      cargarMedicos(Number(especialidadSelect.value));
-  });
+          const fechaCell = document.createElement('td');
+          fechaCell.textContent = turno.fecha;
+          row.appendChild(fechaCell);
+
+          const horaCell = document.createElement('td');
+          horaCell.textContent = turno.hora; // Agregar la hora del turno
+          row.appendChild(horaCell);
+
+          const especialidadCell = document.createElement('td');
+          especialidadCell.textContent = especialidades.find(especialidad => especialidad.codigo === turno.especialidad).descripcion;
+          row.appendChild(especialidadCell);
+
+          const medicoCell = document.createElement('td');
+          medicoCell.textContent = registrados.find(medico => medico.id === turno.medico).nombre + ' ' + registrados.find(medico => medico.id === turno.medico).apellido;
+          row.appendChild(medicoCell);
+
+          const motivoCell = document.createElement('td');
+          motivoCell.textContent = turno.motivo;
+          row.appendChild(motivoCell);
+
+          turnosList.appendChild(row);
+      });
+  }
 
   solicitarTurnoForm.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -75,9 +96,10 @@ document.addEventListener('DOMContentLoaded', function () {
           showConfirmButton: false,
           timer: 1500,
       });
+
+      mostrarTurnos(); // Llamar a la función para mostrar los turnos después de solicitar uno nuevo
   });
 
   cargarEspecialidades();
-
-  // No es necesario cargar los turnos si no se utiliza el elemento "turnoSelect"
+  mostrarTurnos(); // Mostrar los turnos al cargar la página
 });

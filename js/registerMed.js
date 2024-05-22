@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timer: 1500,
         }).then(() => {
             // Redirigir a otra página
-            window.location.href = './page/medicos.html';
+            window.location.href = 'medicos.html';
         });
     }
 
