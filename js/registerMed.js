@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Validar contraseña
-        const validarContrasena = /^(?=.*[A-Z])(?=.*\d).+/;
+        const validarContrasena = /^(?=.[A-Z])(?=.\d).+/;
         if (!validarContrasena.test(password)) {
             return mostrarError('La contraseña debe contener al menos una mayúscula y un valor numérico');
         }

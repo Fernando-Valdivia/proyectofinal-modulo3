@@ -1,95 +1,91 @@
-//Logica para registrar Pacientes
+document.addEventListener('DOMContentLoaded', () => {
+	const validarRegistro = document.querySelector('#validarRegistro');
+	const pacientesRegistrados = JSON.parse(localStorage.getItem('pacientes')) || [];
+	const administradoresRegistrados = JSON.parse(localStorage.getItem('administradores')) || [];
 
-<<<<<<< HEAD
-/*EJEMPLO:
-
-En la validacion,si el medico ingresa las credenciales correctas, en el condicional 
- ingresamos window.location.href = '../pages/dashboard_pac.html; 
- para que redireccione a el html donde va a estar todo lo que ve el paciente
-*/
-=======
-validarRegistro.addEventListener('submit', validarUsuario);
-
-const usuarioRegistrados = JSON.parse(localStorage.getItem('registrados')) || [];
-
-class Usuario {
-	constructor(id, nombre, apellido, especialidad, email, password) {
-		this.id = id;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.especialidad = especialidad;
-		this.email = email;
-		this.password = password;
-	}
-}
-
-function validarUsuario(e) {
-	e.preventDefault();
-
-	// Obtener los valores de los input
-	const id = Date.now();
-	const nombre = document.querySelector('#nombre').value;
-	const apellido = document.querySelector('#apellido').value;
-	const especialidad = document.querySelector('#especialidad').value;
-	const email = document.querySelector('#email').value;
-	const password = document.querySelector('#password').value;
-	const confirmPassword = document.querySelector('#confirmPassword').value;
-
-	// Validaciones
-	if (nombre === '' || apellido === '' || especialidad === '' || email === '' || password === '' || confirmPassword === '') {
-		return mostrarError('Todos los campos son obligatorios');
-	} else if (password.length < 6) {
-		return mostrarError('La contraseña debe ser mayor a 6 caracteres');
-	} else if (password !== confirmPassword) {
-		return mostrarError('Las contraseñas deben ser iguales');
+	class Usuario {
+		constructor(id, nombre, apellido, dni, genero, email, password, estado = null) {
+			this.id = id;
+			this.nombre = nombre;
+			this.apellido = apellido;
+			this.dni = dni;
+			this.genero = genero;
+			this.email = email;
+			this.password = password;
+			this.estado = estado; // Nuevo atributo opcional
+		}
 	}
 
-	// Validar formato de email
-	const validarEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-	if (!validarEmail.test(email)) {
-		return mostrarError('El email no es válido');
+	validarRegistro.addEventListener('submit', validarUsuario);
+
+	function validarUsuario(e) {
+		e.preventDefault();
+
+		const inputs = {
+			nombre: document.querySelector('#nombre').value.trim(),
+			apellido: document.querySelector('#apellido').value.trim(),
+			dni: document.querySelector('#dni').value.trim(),
+			genero: document.querySelector('#genero').value.trim(),
+			email: document.querySelector('#email').value.trim(),
+			password: document.querySelector('#password').value.trim(),
+			confirmPassword: document.querySelector('#confirmPassword').value.trim(),
+		};
+
+		const { nombre, apellido, dni, genero, email, password, confirmPassword } = inputs;
+
+		if (!nombre || !apellido || !dni || !genero || !email || !password || !confirmPassword) {
+			return mostrarError('Todos los campos son obligatorios');
+		}
+		if (password.length < 6) {
+			return mostrarError('La contraseña debe ser mayor a 6 caracteres');
+		}
+		if (password !== confirmPassword) {
+			return mostrarError('Las contraseñas deben ser iguales');
+		}
+
+		const validarEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+		if (!validarEmail.test(email)) {
+			return mostrarError('El email no es válido');
+		}
+
+		const validarContrasena = /^(?=.[A-Z])(?=.\d).+/;
+		if (!validarContrasena.test(password)) {
+			return mostrarError('La contraseña debe contener al menos una mayúscula y un valor numérico');
+		}
+
+		const isAdmin = email.endsWith('@osdda.com');
+		const usuariosRegistrados = isAdmin ? administradoresRegistrados : pacientesRegistrados;
+		const usuarioExistente = usuariosRegistrados.find(usuario => email === usuario.email);
+
+		if (usuarioExistente) {
+			return mostrarError('El correo ya existe');
+		}
+
+		const estadoInicial = isAdmin ? null : 'Pendiente'; // Estado inicial solo para pacientes
+		const nuevoUsuario = new Usuario(Date.now(), nombre, apellido, dni, genero, email, password, estadoInicial);
+
+		usuariosRegistrados.push(nuevoUsuario);
+		const storageKey = isAdmin ? 'administradores' : 'pacientes';
+		localStorage.setItem(storageKey, JSON.stringify(usuariosRegistrados));
+
+		const redirectURL = isAdmin ? 'http://127.0.0.1:5501/admin.html' : 'http://127.0.0.1:5501/pacientes.html';
+
+		Swal.fire({
+			position: 'center',
+			icon: 'success',
+			title: 'Usuario Registrado Correctamente',
+			showConfirmButton: false,
+			timer: 1500,
+		}).then(() => {
+			window.location.href = redirectURL;
+		});
 	}
 
-	// Validar contraseña
-	const validarContrasena = /^(?=.*[A-Z])(?=.*\d).+/;
-	if (!validarContrasena.test(password)) {
-		return mostrarError('La contraseña debe contener al menos una mayúscula y un valor numérico');
+	function mostrarError(mensaje) {
+		Swal.fire({
+			icon: 'error',
+			title: 'Oops...',
+			text: mensaje,
+		});
 	}
-
-	// Verificar si el correo ya está registrado
-	const comprobandoEmail = usuarioRegistrados.find(usuario => email === usuario.email);
-	if (comprobandoEmail !== undefined) {
-		return mostrarError('El correo ya existe');
-	}
-
-	// Crear el objeto Usuario
-	const nuevoUsuario = new Usuario(id, nombre, apellido, especialidad, email, password);
-
-	// Guardar en la lista y en el localStorage
-	usuarioRegistrados.push(nuevoUsuario);
-	localStorage.setItem('registrados', JSON.stringify(usuarioRegistrados));
-
-	// Mostrar mensaje de éxito y redirigir
-	Swal.fire({
-		position: 'center',
-		icon: 'success',
-		title: 'Usuario Registrado Correctamente',
-		showConfirmButton: false,
-		timer: 1500,
-	}).then(() => {
-		// Redirigir a otra página
-		window.location.href = 'http://127.0.0.1:5501/medicos.html';
-	});
-}
-
-function mostrarError(mensaje) {
-	Swal.fire({
-		icon: 'error',
-		title: 'Oops...',
-		text: mensaje,
-	});
-}
-
-
-
->>>>>>> f3e855613e2c9d12d88d82267de367f03ccd06cb
+})
