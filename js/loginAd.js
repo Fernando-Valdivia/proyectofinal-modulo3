@@ -16,7 +16,7 @@ function validarAdmin(e) {
 
   const emailExistenteAdministrador = administradores.find(usuario => emailAdmin === usuario.email);
 
-  if (emailExistenteAdministrador == undefined){
+  if (emailExistenteAdministrador === undefined){
     return Swal.fire({
       icon: "error",
       title: "El correo o la contraseña es incorrecta",

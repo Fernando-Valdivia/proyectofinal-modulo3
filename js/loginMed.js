@@ -15,7 +15,7 @@ function validarMedico(e) {
 
   const emailExistenteMedico = medicos.find(usuario => emailMedico === usuario.email);
 
-  if (emailExistenteMedico == undefined){
+  if (emailExistenteMedico === undefined){
     return Swal.fire({
       icon: "error",
       title: "El correo o la contraseña es incorrecta",
@@ -53,6 +53,6 @@ function validarMedico(e) {
     showConfirmButton: false,
     timer: 1500,
   }).then(() => {
-    window.location.href = "./pages/dashboard_med.html";
+    window.location.href = "./pages/medicos.html";
   });;
 }
