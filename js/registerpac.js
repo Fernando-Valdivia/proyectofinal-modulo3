@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const storageKey = isAdmin ? 'administradores' : 'pacientes';
 		localStorage.setItem(storageKey, JSON.stringify(usuariosRegistrados));
 
-		const redirectURL = isAdmin ? './pages/panelAdministracion.html' : './pages/panelClientes.html';
-
+		const redirectURL = isAdmin ? 'panelAdministracion.html' : 'panelClientes.html';
+		
 		Swal.fire({
 			position: 'center',
 			icon: 'success',
