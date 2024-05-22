@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/css/styles.css">
    <link rel="stylesheet" href="/css/mediaQueries.css">
-   <link rel="stylesheet" href="/css/solicitarTurnos.css">
+   <link rel="stylesheet" href="/css/panelAdministracion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -52,41 +52,32 @@
     </nav>
 
     <main>
-        <div class="container mt-4">
-            <h1 class="text-center">Solicitar Turno</h1>
-            <div class="card p-4">
-              <form id="solicitar-turno-form">
-                <div class="mb-3">
-                  <label for="especialidad" class="form-label">Especialidad:</label>
-                  <select id="especialidad" class="form-select" required>
-                    <!-- Opciones cargadas dinámicamente -->
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <label for="medico" class="form-label">Médico:</label>
-                  <select id="medico" class="form-select" required>
-                    <!-- Opciones cargadas dinámicamente -->
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <label for="fecha" class="form-label">Fecha:</label>
-                  <input type="text" id="fecha" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                  <label for="turno" class="form-label">Turno:</label>
-                  <select id="turno" class="form-select" required>
-                    <!-- Opciones cargadas dinámicamente -->
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <label for="motivo" class="form-label">Motivo de la consulta:</label>
-                  <input type="text" id="motivo" class="form-control" required>
-                </div>
-                <button type="submit" class="btn btn-success">Solicitar Turno</button>
-              </form>
-            </div>
+
+    <!-- Contenedor principal -->
+    <div class="container my-5">
+      <div class="d-flex justify-content-center flex-wrap">
+          <!-- Tarjeta 1 -->
+          <div class="card m-3" style="width: 20rem;">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Solicitar Turnos</h5>
+                  <a href="/pages/solicitarTurnos.html">
+                    <img src="/assets/img/panelClientes/solicitar_turnos.jpg" class="card-img-top" alt="Solicitar Turnos"/>
+                  </a>                  
+              </div>
           </div>
-    </main>
+          <!-- Tarjeta 2 -->
+          <div class="card m-3" style="width: 20rem;">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Mis Turnos</h5>
+                  <a href="/pages/error404.html">
+                    <img src="/assets/img/panelClientes/mis_turnos.webp" class="card-img-top" alt="Mis Turnos"/>
+                  </a>                  
+              </div>
+          </div>
+      </div>
+  </div>
+
+</main>
 
 <section>
 <div class="container-fluid mt-5">
@@ -153,11 +144,5 @@
 </footer>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="/JS/solicitarTurnos.js"></script>
 </html>

@@ -61,14 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			return mostrarError('El correo ya existe');
 		}
 
-		const estadoInicial = isAdmin ? null : 'Pendiente'; // Estado inicial solo para pacientes
+		const estadoInicial = isAdmin ? null : 'pendiente'; // Estado inicial solo para pacientes
 		const nuevoUsuario = new Usuario(Date.now(), nombre, apellido, dni, genero, email, password, estadoInicial);
 
 		usuariosRegistrados.push(nuevoUsuario);
 		const storageKey = isAdmin ? 'administradores' : 'pacientes';
 		localStorage.setItem(storageKey, JSON.stringify(usuariosRegistrados));
 
-		const redirectURL = isAdmin ? 'http://127.0.0.1:5501/admin.html' : 'http://127.0.0.1:5501/pacientes.html';
+		const redirectURL = isAdmin ? './pages/panelAdministracion.html' : './pages/panelClientes.html';
 
 		Swal.fire({
 			position: 'center',
