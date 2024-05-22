@@ -13,7 +13,7 @@ function validarMedico(e) {
   const validarEmailMedico = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
   const resultadoValidacionMedico = validarEmailMedico.test(emailMedico);
 
-  const emailExistenteMedico = medicos.find(usuario => usuario.email === email);
+  const emailExistenteMedico = pacientes.find(usuario => emailMedico === usuario.email);
 
   if (emailExistenteMedico == undefined){
     return Swal.fire({
@@ -23,7 +23,7 @@ function validarMedico(e) {
     });
   }   
 
-  if (emailExistenteMedico.password !== password){
+  if (emailExistenteMedico.password !== passwordMedico){
     return Swal.fire({
       icon: "error",
       title: "El correo o la contraseña es incorrecta",

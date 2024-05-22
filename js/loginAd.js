@@ -14,7 +14,7 @@ function validarAdmin(e) {
   const validarEmailAdmin = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
   const resultadoValidacionAdmin = validarEmailAdmin.test(emailAdmin);
 
-  const emailExistenteAdministrador = administradores.find(usuario => email === usuario.email);
+  const emailExistenteAdministrador = administradores.find(usuario => emailAdmin === usuario.email);
 
   if (emailExistenteAdministrador == undefined){
     return Swal.fire({
@@ -23,7 +23,7 @@ function validarAdmin(e) {
       text: "Vuelva a intentarlo",
     });
   }
-  if (emailExistenteAdministrador.password !== password){
+  if (emailExistenteAdministrador.password !== passwordAdmin){
     return Swal.fire({
       icon: "error",
       title: "El correo o la contraseña es incorrecta",

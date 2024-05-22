@@ -15,7 +15,7 @@ function validarPaciente(e) {
   const validarEmailPaciente = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
   const resultadoValidacionPaciente = validarEmailPaciente.test(emailPaciente);
 
-  const emailExistentePaciente = pacientes.find(usuario => email === usuario.email);
+  const emailExistentePaciente = pacientes.find(usuario => emailPaciente === usuario.email);
   
  if (emailExistentePaciente == undefined){
   return Swal.fire({
@@ -24,7 +24,7 @@ function validarPaciente(e) {
     text: "Vuelva a intentarlo",
   });
 }
-if (emailExistentePaciente.password !== password){
+if (emailExistentePaciente.password !== passwordPaciente){
   return Swal.fire({
     icon: "error",
     title: "El correo o la contraseña es incorrecta",
