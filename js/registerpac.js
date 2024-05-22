@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			return mostrarError('El correo ya existe');
 		}
 
-		const estadoInicial = isAdmin ? null : 'Pendiente'; // Estado inicial solo para pacientes
+		const estadoInicial = isAdmin ? null : 'pendiente'; // Estado inicial solo para pacientes
 		const nuevoUsuario = new Usuario(Date.now(), nombre, apellido, dni, genero, email, password, estadoInicial);
 
 		usuariosRegistrados.push(nuevoUsuario);
