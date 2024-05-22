@@ -53,6 +53,6 @@ function validarMedico(e) {
     showConfirmButton: false,
     timer: 1500,
   }).then(() => {
-    window.location.href = "http://127.0.0.1:5501/pages/dashboard_med.html";
+    window.location.href = "./pages/dashboard_med.html";
   });;
 }

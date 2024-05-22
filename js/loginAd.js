@@ -68,6 +68,6 @@ function validarAdmin(e) {
     showConfirmButton: false,
     timer: 1500,
   }).then(() => {
-    window.location.href = "http://127.0.0.1:5501/pages/dashboard_admin.html";
+    window.location.href = "./pages/panelAdministracion.html";
   });;
 }
